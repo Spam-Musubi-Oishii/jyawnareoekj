@@ -1,0 +1,142 @@
+.sidenav-col  {
+    background-color: #000;
+    width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+}
+
+.sidenav-list {
+    list-style-type: none;
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+}
+
+.sidenav-menu {
+    list-style-type: none;
+    width: 100%;
+    padding: 5% 0% 0% 0%;
+}
+
+.subtopics {
+    list-style-type: none;
+}
+
+/* the notes container */
+#maincontent {
+    /* background-color: #add5ed; */
+    background-color: white;
+    padding: 1% 7% 1% 7%;
+}
+
+/*  main headings for content topics */
+.topicheader {
+    text-align: center;
+    padding: 60px 0px 15px 0px;
+}
+
+/* subtopic headings for content topics */
+.subtopicheader {
+    padding: 20px 0px 10px 0px;
+}
+
+/* home, about, etc menu items */
+.menu-item {
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+
+}
+
+/* on menu item hover */
+.active, .menu-item:hover {
+  background-color: #557182;
+}
+
+
+
+/* topic menu items  */
+.collapsible {
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* on topic menu item hover */
+.active, .collapsible:hover {
+  background-color: #557182;
+}
+
+
+.collapsible:after {
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+/* side nav topics container */
+.content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #add5ed;
+
+}
+
+.subtopics {
+
+}
+
+/* gets rid of blue border when nav menu item is pressed */
+button:focus {outline:0;}
+
+
+/* links */
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+  color: #557182;
+  text-decoration: none;
+}
+/* selected link */
+a:active {
+  color: white;
+}
+
+
+
+/* desmos stuff */
+/* graphing calculator */
+.desmos-calculator {
+    margin: auto;
+    padding: 15px 0px 15px 0px;
+}

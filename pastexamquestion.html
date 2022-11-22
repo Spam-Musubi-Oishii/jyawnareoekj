@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
+
+  <title>yeet</title>
+</head>
+<body>
+
+    <!-- Navbar fixed to side !-->
+    <div class="container-fluid">
+        <div class="row">
+            
+
+            <!-- Main content !-->
+            <div class="col-md-12" id="maincontent" >
+
+              <!-- Navbar -->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#" id="question_list_title"></a></li>
+                </ol>
+              </nav>
+
+
+                <div class="container">
+
+                    <!-- Question Number Navigation -->
+                    <div class="card text-center border-0">
+                        <div class="card-header">
+                          <ul class="nav nav-pills card-header-pills" id="question_nav">
+                            <!-- dynamically generated depending on number of questions in question list for given topics and levels -->
+                            <!-- <li class="nav-item">
+                              <a class="nav-link" onclick="updateQuestion(0)" href="#">1</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" onclick="updateQuestion(1)" href="#">2</a>
+                            </li> -->
+                          </ul>
+                        </div>
+
+
+                        <!-- Question -->
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-12" id="question">
+                              <!-- <img src="resources/differentiate1.jpg" alt="" class="img-fluid">         -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>             
+                    
+                      <br>
+                      
+                
+                <!-- Incorrect and Correct Buttons -->
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn border border-secondary" onclick="setCurrentQuestionIncorrect()">Incorrect</button>
+                  <button type="button" class="btn btn-success" onclick="setCurrentQuestionCorrect()">Correct</button>
+                </div>
+
+                <!-- Hint, Answer, Video Solution, and Question Details Accordian -->
+                <div class="accordion accordion-flush" id="accordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Hint
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion">
+                      <div class="accordion-body" id="hint">
+                        <!-- <img src="resources/differentiate1S.jpg" alt="" class="img-fluid" > -->
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Answer
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                      <div class="accordion-body" id="answer">
+                        <!-- <img src="resources/differentiate1S.jpg" alt="" class="img-fluid" > -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Video Solution
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion">
+                      <div class="accordion-body" id="video_solution">
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Question Details
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordion">
+                      <div class="accordion-body" id="question_details">
+                        <!-- <p>Difficulty: Achieved</p>
+                        <p>Topics: Gradient, Derivative</p>
+                        <p>Origin: 2013 Calculus Exam Question 3a</p>
+                        <p>Question ID: 123456</p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <div id="root">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://www.desmos.com/api/v1.2/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script> 
+    <script>
+      var elt = document.getElementById('calculator');
+      var calculator = Desmos.GraphingCalculator(elt);
+      calculator.setExpression({id:'graph1', latex:'y=x^2'});
+    </script>
+</body>
+</html>

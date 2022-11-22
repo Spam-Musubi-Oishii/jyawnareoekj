@@ -1,0 +1,27 @@
+{
+    "questionlist": [
+        {
+        "question_ID":1,
+        "origin":"NCEA Past Exam - Level 3 Calculus 2022 - Question 3a",
+        "difficulty":"Achieved",
+        "topics":["differentiation","secant", "chain rule"],
+        "question_img":"resources\\differentiate1.jpg",
+        "hint_img":"resources\\differentiate1S.jpg",
+        "answer_img":"resources\\differentiate1S.jpg",
+        "video_answer_link":"https://www.youtube.com/watch?v=tgbNymZ7vqY",
+        "formula_sheet":"resources\\differentiate1S.jpg"
+        },
+        {
+        "question_ID":2,
+        "origin":"NCEA Past Exam - Level 3 Calculus 2022 - Question 3a",
+        "difficulty":"Achieved",
+        "topics":["differentiation","secant", "chain rule"],
+        "question_img":"resources\\differentiate1S.jpg",
+        "hint_img":"resources\\differentiate1S.jpg",
+        "answer_img":"resources\\differentiate1S.jpg",
+        "video_answer_link":"https://www.youtube.com/watch?v=tgbNymZ7vqY",
+        "formula_sheet":"resources\\differentiate1S.jpg"
+        }
+    ]
+    
+}
