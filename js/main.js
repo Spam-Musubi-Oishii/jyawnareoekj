@@ -228,7 +228,7 @@ function updateQuestion(questionID){
 function updateQuestionPage(selected_questionlist_name){
   localStorage['selected_questionlist_name'] = selected_questionlist_name; 
   localStorage['selected_question_number'] = 0; 
-  window.location="pastexamquestion.html"
+  window.location.assign("https://spam-musubi-oishii.github.io/ncearevision/pastexamquestion.html");
 }
 
 
