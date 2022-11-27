@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="style.css">
 
-  <title>yeet</title>
+  <title>NCEA Revision Online</title>
 </head>
 <body>
 
@@ -24,8 +24,8 @@
 
               <!-- Navbar -->
               <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <ol class="breadcrumb justify-content-center fs-1">
+                  <li class="breadcrumb-item"><a href="index.html">Index</a></li>
                   <li class="breadcrumb-item"><a href="#" id="question_list_title"></a></li>
                 </ol>
               </nav>
@@ -62,16 +62,20 @@
                       
                 
                 <!-- Incorrect and Correct Buttons -->
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn border border-secondary" onclick="setCurrentQuestionIncorrect()">Incorrect</button>
-                  <button type="button" class="btn btn-success" onclick="setCurrentQuestionCorrect()">Correct</button>
+                <div class="btn-group d-block text-center" role="group">
+                  <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Go to next question" onclick="gotoPrevQuesion()"><img src="/resources/caret-left.svg" alt="<"></button>
+                  <button type="button" class="btn border border-2 boder-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as incorrect" onclick="setCurrentQuestionIncorrect()"><img src="resources/x.svg" alt="x"></button>
+                  <button type="button" class="btn btn-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Unmark" onclick="setCurrentQuestionNeutral()"><img src="resources/dash.svg" alt="-"></button>
+                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as correct" onclick="setCurrentQuestionCorrect()"><img src="resources/check.svg" alt="o"></button>
+                  <button type="button" class="btn" data-bs-toggle="tooltip" data-bs-placement="top" title="Go to next question" onclick="gotoNextQuesion()"><img src="/resources/caret-right.svg" alt=">"></button>
+
                 </div>
 
                 <!-- Hint, Answer, Video Solution, and Question Details Accordian -->
                 <div class="accordion accordion-flush" id="accordion">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Hint
                       </button>
                     </h2>
@@ -84,7 +88,7 @@
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Answer
                       </button>
                     </h2>
@@ -96,7 +100,7 @@
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Video Solution
                       </button>
                     </h2>
@@ -108,7 +112,7 @@
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Question Details
                       </button>
                     </h2>

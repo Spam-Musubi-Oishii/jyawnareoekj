@@ -1,3 +1,8 @@
+.panel-heading {
+  padding: 50px;
+}
+
+
 .sidenav-col  {
     background-color: #000;
     width: 100%;
@@ -35,16 +40,6 @@
     padding: 1% 7% 1% 7%;
 }
 
-/*  main headings for content topics */
-.topicheader {
-    text-align: center;
-    padding: 60px 0px 15px 0px;
-}
-
-/* subtopic headings for content topics */
-.subtopicheader {
-    padding: 20px 0px 10px 0px;
-}
 
 /* home, about, etc menu items */
 .menu-item {
@@ -64,8 +59,6 @@
 .active, .menu-item:hover {
   background-color: #557182;
 }
-
-
 
 /* topic menu items  */
 .collapsible {
@@ -103,9 +96,6 @@
 
 }
 
-.subtopics {
-
-}
 
 /* gets rid of blue border when nav menu item is pressed */
 button:focus {outline:0;}
@@ -120,23 +110,15 @@ a:link {
 /* visited link */
 a:visited {
   color: black;
-  text-decoration: none;
+  text-decoration:solid;
 }
 /* mouse over link */
 a:hover {
   color: #557182;
-  text-decoration: none;
+  text-decoration:wavy;
 }
 /* selected link */
 a:active {
-  color: white;
+  color: grey;
 }
 
-
-
-/* desmos stuff */
-/* graphing calculator */
-.desmos-calculator {
-    margin: auto;
-    padding: 15px 0px 15px 0px;
-}
