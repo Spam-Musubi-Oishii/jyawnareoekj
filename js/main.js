@@ -1111,7 +1111,7 @@ function updateQuestion(questionID){
 function updateQuestionPage(selected_questionlist_name){
   localStorage['selected_questionlist_name'] = selected_questionlist_name; 
   localStorage['selected_question_number'] = 0; 
-  window.location="http://127.0.0.1:5500/pastexamquestion.html"
+  window.location="/pastexamquestion.html"
 }
 
 
