@@ -954,8 +954,6 @@ const questionlist = [
 
   
 var questionlist_length = Object.keys(questionlist).length;
-console.log(questionlist_length)  
-
 
 // Question Lists
 // Level - Standard 
@@ -970,7 +968,7 @@ const all_questionlists = {
   "L2_Calculus_2016": [66,67,68,69,70,71,72,73,74,75,76,77,78],
   
   "L2_Calculus_Achieved": [0,7,10,11,15,17,20,23,25,31,38,43,48,49,52,57,62],
-  "L2_Calculus_Merit": [1,3,4,6,8,12,13,16,1,21,22,27,30,33,35,39,40,44,46,50,53,54,58,59,63],
+  "L2_Calculus_Merit": [1,3,4,6,8,12,13,16,18,21,22,27,30,33,35,39,40,44,46,50,53,54,58,59,63],
   "L2_Calculus_Excellence": [2,5,9,14,19,24,26,28,29,32,3436,37,41,42,45,47,51,55,56,60,61,64,65],
 
   "L2_Calculus_Differentiation": [4,3,2,1,0,10,11,12,15,17,19,21,23,24,26,27,28,29,30,32,35,36,37,38,39,41,42,43,44,47,49,50,51,52,54,55,56,57,58,59,60,61,65,66,68,70,71,72,73,74,75,],
@@ -1015,6 +1013,14 @@ const all_questionlists = {
 
 let selected_questionlist = []
 
+let questionHTML = {
+  "questionHTML": "",
+  "hintHTML": "",
+  "answerHTML":"",
+  "videoHTML":"",
+  "detailsHTML":""
+}
+
 window.addEventListener("load", myInit, true); function myInit(){
   initUserData()
   initLoadQuestions()
@@ -1025,8 +1031,6 @@ function initUserData(){
 
   // all questions correct flag initialisation
   let all_questions_correct_flag_temp = new Array(questionlist_length)
-  console.log(all_questions_correct_flag_temp);
-  // console.log(Object.keys(localStorage.getItem('all_questions_correct_flag')))
 
   if (localStorage.getItem('all_questions_correct_flag')==null){
     for (var i = 0; i < questionlist_length; i++) all_questions_correct_flag_temp[i] = 0;
@@ -1091,17 +1095,21 @@ function loadQuestions(){
 function updateQuestion(questionID){
   localStorage.setItem('selected_question_number', questionID);
   let questiondata = questionlist[selected_questionlist[questionID]]
-  document.getElementById("question").innerHTML = "<img src=https://drive.google.com/uc?export=view&id=" + questiondata.question_img + " class=\"img-fluid\">"
-  document.getElementById("hint").innerHTML = "<img src=https://drive.google.com/uc?export=view&id=" + questiondata.hint_img + " class=\"img-fluid\">"
-  document.getElementById("answer").innerHTML = "<img src=https://drive.google.com/uc?export=view&id=" + questiondata.answer_img + " class=\"img-fluid\">"
-  document.getElementById("video_solution").innerHTML = "<iframe width=100% height=\"720\"  src=\"https://www.youtube.com/embed/" + questiondata.video_answer_link + "\"></iframe>"
+
+  document.getElementById("question").innerHTML = "<img src=https://drive.google.com/uc?export=view&id=" + questiondata.question_img + " class=\"img-fluid mx-auto d-block\">"
   
   let topicdata = ""
   for (let i = 0; i< questiondata.topics.length; i++){
     topicdata += questiondata.topics[i] + " - "
   }
-  document.getElementById("question_details").innerHTML = "<p>Difficulty: " + questiondata.difficulty + "</p><p>Topics: "+ topicdata + "</p><p>Origin: " + questiondata.origin + "</p><p>Question ID: " + questiondata.question_ID + "</p"  
   loadQuestions()
+
+  questionHTML["hintHTML"]="<img src=https://drive.google.com/uc?export=view&id=" + questiondata.hint_img + " class=\"img-fluid\">"
+  questionHTML["answerHTML"]="<img src=https://drive.google.com/uc?export=view&id=" + questiondata.answer_img + " class=\"img-fluid\">"
+  questionHTML["videoHTML"]="<iframe width=100% height=\"720\"  src=\"https://www.youtube.com/embed/" + questiondata.video_answer_link + "\"></iframe>"
+  questionHTML["detailsHTML"]= "<p>Difficulty: " + questiondata.difficulty + "</p><p>Topics: "+ topicdata + "</p><p>Origin: " + questiondata.origin + "</p><p>Question ID: " + questiondata.question_ID + "</p>"
+  
+  showNone()
 
 }
 
@@ -1111,7 +1119,33 @@ function updateQuestion(questionID){
 function updateQuestionPage(selected_questionlist_name){
   localStorage['selected_questionlist_name'] = selected_questionlist_name; 
   localStorage['selected_question_number'] = 0; 
-  window.location="/pastexamquestion.html"
+  window.location="/questions.html"
+}
+
+
+
+function showNone(){
+  document.getElementById("display_area").innerHTML=""
+}
+
+function showHint(){
+  document.getElementById("display_area").innerHTML=questionHTML["hintHTML"]
+  document.getElementById("display_area").innerHTML+="<button type=\"button\" class=\"btn d-block text-center\" onclick=\"showNone()\"><img src=\"/resources/chevron-up.svg\" alt=\"^\"></button>"
+}
+
+function showAnswer(){
+  document.getElementById("display_area").innerHTML=questionHTML["answerHTML"]
+  document.getElementById("display_area").innerHTML+="<button type=\"button\" class=\"btn d-block text-center\" onclick=\"showNone()\"><img src=\"/resources/chevron-up.svg\" alt=\"^\"></button>"
+}
+
+function showVideo(){
+  document.getElementById("display_area").innerHTML=questionHTML["videoHTML"]
+  document.getElementById("display_area").innerHTML+="<button type=\"button\" class=\"btn d-block text-center\" onclick=\"showNone()\"><img src=\"/resources/chevron-up.svg\" alt=\"^\"></button>"
+}
+
+function showDetails(){
+  document.getElementById("display_area").innerHTML=questionHTML["detailsHTML"]
+  document.getElementById("display_area").innerHTML+="<button type=\"button\" class=\"btn d-block text-center\" onclick=\"showNone()\"><img src=\"/resources/chevron-up.svg\" alt=\"^\"></button>"
 }
 
 
@@ -1130,7 +1164,6 @@ function setCurrentQuestionIncorrect(){
   localStorage.setItem('all_questions_correct_flag', JSON.stringify(question_flags));
   
   loadQuestions();
-  // console.log(JSON.parse(localStorage.getItem('all_questions_correct_flag')))
 }
 
 function setCurrentQuestionCorrect(){
@@ -1145,8 +1178,6 @@ function setCurrentQuestionCorrect(){
   localStorage.setItem('all_questions_correct_flag', JSON.stringify(question_flags));
   
   loadQuestions();
-  // console.log(JSON.parse(localStorage.getItem('all_questions_correct_flag')))
-
 }
 
 function setCurrentQuestionNeutral(){
@@ -1161,7 +1192,6 @@ function setCurrentQuestionNeutral(){
   localStorage.setItem('all_questions_correct_flag', JSON.stringify(question_flags));
   
   loadQuestions();
-  // console.log(JSON.parse(localStorage.getItem('all_questions_correct_flag')))
 }
 
 function gotoNextQuesion(){
