@@ -1,0 +1,10 @@
+{
+    "question_img":"",
+    "hint_img":"",
+    "answer_img":"",
+    "video_answer_link":"",
+    "difficulty":"Merit",
+    "topics":[""],
+    "origin":"NCEA Past Exam - Level 2 Algebra 2017 - Question 3d",
+    "question_ID":89,
+},
